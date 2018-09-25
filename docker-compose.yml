@@ -1,0 +1,60 @@
+version: '3'
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    restart: always
+    hostname: localhost
+    privileged: true
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost'
+    ports:
+      - 80:80
+      - 443:443
+      - 22:22
+      - 2224:2224
+    volumes:
+      - /Users/zawadzkibartek/gitlab/config:/etc/gitlab
+      - /Users/zawadzkibartek/gitlab/logs:/var/log/gitlab
+      - /Users/zawadzkibartek/gitlab/data:/var/opt/gitlab
+    networks:
+      internal:
+        aliases:
+          - gitlab
+
+  jenkins:
+    image: jenkinsci/blueocean:latest
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - /Users/zawadzkibartek/jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      internal:
+        aliases:
+          - jenkins
+
+  sakila-db:
+    image: mysql:5.7.23
+#    command: ./tmp/init_db.sh
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: "sakila"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+      - /Users/zawadzkibartek/repos/sii/sakila-db:/docker-entrypoint-initdb.d
+      - /Users/zawadzkibartek/mysql/datadir:/var/lib/mysql
+    networks:
+      internal:
+        aliases:
+          - sakila
+  
+networks:
+  internal:
