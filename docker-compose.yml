@@ -38,10 +38,9 @@ services:
 
   sakila-db:
     image: mysql:5.7.23
-#    command: ./tmp/init_db.sh
     restart: always
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
       MYSQL_DATABASE: "sakila"
       MYSQL_USER: "test"
