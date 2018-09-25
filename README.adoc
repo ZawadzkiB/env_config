@@ -75,6 +75,41 @@ node gitlab_scripts/creatUser.js '{"name":"user-666"}'
 
 image::images/Screenshot at Sep 26 00-06-45.png[]
 
+inside createUser.js
+there is data.token which can be generated in user profile on gitlab
+and is used to authenticate api requests
+
+[source,javascript]
+.createUser.js
+----
+let data = {
+    'token': 'Z7rs4vnTMgobpthGpYEW',
+    'users_url': 'http://localhost/api/v4/users'
+};
+
+let userData = {
+    'email': 'test-user-api3@mailinator.com',
+    'username': 'test-user-api3',
+    'name': 'Name',
+    'password': 'Password',
+    'skype': 'Skype ID',
+    'linkedin': 'LinkedIn',
+    'twitter': 'Twitter account',
+    'website_url': 'Website URL',
+    'organization': 'Organization name',
+    'projects_limit': 1,
+    'extern_uid': '',
+    'provider': {},
+    'bio': 'api user',
+    'skip_confirmation': 'true'
+};
+----
+
+password is Password
+
+all this can be changed and upgraded later
+P.S i can't java script ;)
+
 
 
 
