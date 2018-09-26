@@ -59,12 +59,11 @@ let postUser = (user) => {
 
 let createUser = async () => {
     const postResponse = await postUser(user);
-    const getResponse = await getUsers().then(response => {
+    const getResponse = await getUsers()
+        .then(response => {
         return response.filter(obj => {
             return obj.username === user.username
         })
-    }).then(user => {
-        return user
     });
     console.log('User ' + user.username + ' creation status code => ' + postResponse.status + '; User id => ' + getResponse[0].id)
 };
