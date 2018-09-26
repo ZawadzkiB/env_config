@@ -48,7 +48,7 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
-      - /Users/zawadzkibartek/repos/sii/sakila-db:/docker-entrypoint-initdb.d
+      - ./sakila-db:/docker-entrypoint-initdb.d
       - /Users/zawadzkibartek/mysql/datadir:/var/lib/mysql
     networks:
       internal:
