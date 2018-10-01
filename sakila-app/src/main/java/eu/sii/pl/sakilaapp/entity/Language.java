@@ -13,16 +13,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Table(name = "category")
-public class Category {
+@Table(name = "language")
+public class Language {
 
-  @Column(name = "category_id")
+  @Column(name = "language_id")
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Id
-  private Byte categoryId;
-  @Column(name = "name")
+  private Byte languageId;
+  @Column(name = "name", columnDefinition="char(20)")
   private String name;
   @Column(name = "last_update")
   private LocalDateTime lastUpdate;
-
 }

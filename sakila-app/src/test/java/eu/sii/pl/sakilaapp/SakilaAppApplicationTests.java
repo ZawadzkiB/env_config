@@ -1,6 +1,6 @@
 package eu.sii.pl.sakilaapp;
 
-import eu.sii.pl.sakilaapp.service.CategoryService;
+import eu.sii.pl.sakilaapp.service.FilmService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +12,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class SakilaAppApplicationTests {
 
 	@Autowired
-	CategoryService categoryService;
+	FilmService filmService;
 
 	@Test
 	public void categoryTest() {
-		categoryService.getAll();
+		filmService.getAllCategories().forEach(System.out::println);
+		filmService.getAllActors().forEach(System.out::println);
+		filmService.getAllLanguages().forEach(System.out::println);
+		filmService.getAllFilms();
 	}
 
 }
