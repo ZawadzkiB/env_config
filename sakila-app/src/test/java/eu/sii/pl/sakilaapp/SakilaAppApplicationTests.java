@@ -16,10 +16,6 @@ public class SakilaAppApplicationTests {
 
 	@Test
 	public void categoryTest() {
-		filmService.getAllCategories().forEach(System.out::println);
-		filmService.getAllActors().forEach(System.out::println);
-		filmService.getAllLanguages().forEach(System.out::println);
-		filmService.getAllFilms();
 	}
 
 }

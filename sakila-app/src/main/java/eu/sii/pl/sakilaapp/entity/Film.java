@@ -4,26 +4,23 @@ import eu.sii.pl.sakilaapp.converter.FeaturesConverter;
 import eu.sii.pl.sakilaapp.converter.RatingConverter;
 import eu.sii.pl.sakilaapp.enums.Features;
 import eu.sii.pl.sakilaapp.enums.Rating;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Table(name = "film")
 public class Film {
 
   @Column(name = "film_id")
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Id
   private Short filmId;
   @Column(name = "title")
@@ -54,5 +51,17 @@ public class Film {
   private EnumSet<Features> specialFeatures;
   @Column(name = "last_update")
   private LocalDateTime lastUpdate;
+  @ManyToMany
+  @JoinTable(name = "film_category",
+          joinColumns = @JoinColumn(name = "film_id"),
+          inverseJoinColumns = @JoinColumn(name = "category_id")
+  )
+  private List<Category> categories;
+  @ManyToMany
+  @JoinTable(name = "film_actor",
+          joinColumns = @JoinColumn(name = "film_id"),
+          inverseJoinColumns = @JoinColumn(name = "actor_id")
+  )
+  private List<Actor> actors;
 }
 

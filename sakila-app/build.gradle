@@ -1,6 +1,7 @@
 buildscript {
 	ext {
 		springBootVersion = '2.0.5.RELEASE'
+		swaggerVersion = '2.9.2'
 	}
 	repositories {
 		mavenCentral()
@@ -8,6 +9,11 @@ buildscript {
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
+}
+
+plugins {
+	id 'io.franzbecker.gradle-lombok' version '1.8'
+	id 'java'
 }
 
 apply plugin: 'java'
@@ -32,5 +38,7 @@ dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web-services')
 //	implementation('org.flywaydb:flyway-core')
 	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	compileOnly ('org.projectlombok:lombok:1.18.2')
+	compile("org.springframework.boot:spring-boot-devtools")
+	implementation("io.springfox:springfox-swagger2:${swaggerVersion}")
+	implementation("io.springfox:springfox-swagger-ui:${swaggerVersion}")
 }

@@ -11,9 +11,12 @@ import java.util.EnumSet;
 public class FeaturesConverter implements AttributeConverter<EnumSet<Features>, String> {
 
   public String convertToDatabaseColumn(EnumSet<Features> attribute) {
+    if(attribute==null){
+      return "";
+    }
     StringBuilder sb = new StringBuilder();
     for (Features c : attribute) {
-      sb.append(c + ",");
+      sb.append(c.toString().replaceAll("_"," ") + ",");
     }
     return sb.toString();
   }
