@@ -22,23 +22,37 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'eu.sii.pl'
-version = '0.0.1-SNAPSHOT'
+version = ''
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
+configurations {
+	jar.archiveName = 'sakila-app.jar'
+}
 
 dependencies {
+	compile ("mysql:mysql-connector-java")
+	compile("org.springframework.boot:spring-boot-devtools")
+	compile("org.codehaus.groovy:groovy-all:2.5.2")
+	compile('org.flywaydb:flyway-core:4.2.0')
 	implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile ('mysql:mysql-connector-java')
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('org.springframework.boot:spring-boot-starter-actuator')
 	implementation('org.springframework.boot:spring-boot-starter-web-services')
-//	implementation('org.flywaydb:flyway-core')
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
-	compile("org.springframework.boot:spring-boot-devtools")
 	implementation("io.springfox:springfox-swagger2:${swaggerVersion}")
 	implementation("io.springfox:springfox-swagger-ui:${swaggerVersion}")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testCompile("org.testcontainers:testcontainers:1.9.1")
+	testCompile("org.testcontainers:mysql:1.9.1")
+	testCompile("org.spockframework:spock-core:1.2-groovy-2.5")
+	testCompile("org.spockframework:spock-spring:1.2-groovy-2.5")
+	testCompile 'com.jayway.restassured:rest-assured:2.9.0'
+	testCompile 'org.assertj:assertj-core:1.5.0'
+	testRuntime('com.athaydes:spock-reports:1.2.7')
 }
+
+ext['groovy.version'] = '2.5.0'
+

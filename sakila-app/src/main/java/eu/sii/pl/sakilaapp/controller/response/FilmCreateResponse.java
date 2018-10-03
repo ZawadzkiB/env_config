@@ -1,19 +1,17 @@
 package eu.sii.pl.sakilaapp.controller.response;
 
 import eu.sii.pl.sakilaapp.entity.Film;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-@ResponseStatus(HttpStatus.CREATED)
+@Getter
+@NoArgsConstructor
 public class FilmCreateResponse {
 
-  private final Short id;
+  private Short id;
 
-  public FilmCreateResponse(Film film){
+  public FilmCreateResponse(Film film) {
     this.id = film.getFilmId();
   }
 
-  public Short getId() {
-    return id;
-  }
 }

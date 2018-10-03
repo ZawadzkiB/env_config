@@ -1,0 +1,45 @@
+{
+  "actors": [
+    {
+      "actorId": 1,
+      "firstName": "PENELOPE",
+      "lastName": "GUINESS",
+      "lastUpdate": "2006-02-15T04:34:33"
+    },
+    {
+      "actorId": 198,
+      "firstName": "MARY",
+      "lastName": "KEITEL",
+      "lastUpdate": "2006-02-15T04:34:33"
+    }
+  ],
+  "categories": [
+    {
+      "categoryId": 6,
+      "name": "Documentary",
+      "lastUpdate": "2006-02-15T04:46:27"
+    }
+  ],
+  "id": "6666",
+  "title": "test_title",
+  "lastUpdate": "2018-10-02T23:52:39",
+  "specialFetures": [
+    "TRAILERS",
+    "COMMENTARIES",
+    "DELETED_SCENES",
+    "BEHIND_THE_SCENES"
+  ],
+  "rating": "PG",
+  "replacementCost": 20.99,
+  "rentalRate": 0.99,
+  "length": 86,
+  "rentalDuration": 6,
+  "originalLanguageId": null,
+  "languageId": {
+    "languageId": 1,
+    "name": "English",
+    "lastUpdate": "2006-02-15T05:02:19"
+  },
+  "releaseYear": 2006,
+  "description": "A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies"
+}

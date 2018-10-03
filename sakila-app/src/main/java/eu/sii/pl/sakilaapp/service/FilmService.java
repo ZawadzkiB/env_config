@@ -3,7 +3,6 @@ package eu.sii.pl.sakilaapp.service;
 import eu.sii.pl.sakilaapp.controller.request.FilmRequest;
 import eu.sii.pl.sakilaapp.controller.response.FilmCreateResponse;
 import eu.sii.pl.sakilaapp.controller.response.FilmResponse;
-import eu.sii.pl.sakilaapp.entity.Film;
 import eu.sii.pl.sakilaapp.exceptions.EntityNotFoundException;
 import eu.sii.pl.sakilaapp.repository.FilmRepository;
 import org.springframework.data.domain.Page;

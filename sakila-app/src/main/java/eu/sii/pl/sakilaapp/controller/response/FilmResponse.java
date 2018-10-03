@@ -7,35 +7,34 @@ import eu.sii.pl.sakilaapp.entity.Language;
 import eu.sii.pl.sakilaapp.enums.Features;
 import eu.sii.pl.sakilaapp.enums.Rating;
 import lombok.Getter;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 
-@ResponseStatus(HttpStatus.OK)
 @Getter
+@NoArgsConstructor
 public class FilmResponse {
 
-  private final List<Actor> actors;
-  private final List<Category> categories;
-  private final Short id;
-  private final String title;
-  private final LocalDateTime lastUpdate;
-  private final EnumSet<Features> specialFetures;
-  private final Rating rating;
-  private final BigDecimal replacementCost;
-  private final BigDecimal rentalRate;
-  private final Short length;
-  private final Byte rentalDuration;
-  private final Language originalLanguageId;
-  private final Language languageId;
-  private final Short releaseYear;
-  private final String description;
+  private List<Actor> actors;
+  private List<Category> categories;
+  private Short id;
+  private String title;
+  private LocalDateTime lastUpdate;
+  private EnumSet<Features> specialFetures;
+  private Rating rating;
+  private BigDecimal replacementCost;
+  private BigDecimal rentalRate;
+  private Short length;
+  private Byte rentalDuration;
+  private Language originalLanguageId;
+  private Language languageId;
+  private Short releaseYear;
+  private String description;
 
-  public FilmResponse(Film film){
+  public FilmResponse(Film film) {
     this.actors = film.getActors();
     this.categories = film.getCategories();
     this.id = film.getFilmId();

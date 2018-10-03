@@ -3,11 +3,11 @@ package eu.sii.pl.sakilaapp.controller;
 import eu.sii.pl.sakilaapp.controller.request.FilmRequest;
 import eu.sii.pl.sakilaapp.controller.response.FilmCreateResponse;
 import eu.sii.pl.sakilaapp.controller.response.FilmResponse;
-import eu.sii.pl.sakilaapp.entity.Film;
 import eu.sii.pl.sakilaapp.service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +16,12 @@ import java.util.List;
 @RequestMapping(path = "/film")
 public class FilmController {
 
+  private final FilmService filmService;
+
   @Autowired
-  private FilmService filmService;
+  public FilmController(FilmService filmService) {
+    this.filmService = filmService;
+  }
 
   @RequestMapping(path = "", method = RequestMethod.GET)
   public Page<FilmResponse> getMovies(@RequestParam(defaultValue = "0") int page,
@@ -36,6 +40,7 @@ public class FilmController {
   }
 
   @RequestMapping(path = "", method = RequestMethod.POST)
+  @ResponseStatus(HttpStatus.CREATED)
   public FilmCreateResponse saveMovie(@RequestBody FilmRequest request) {
     return filmService.createFilm(request);
   }
