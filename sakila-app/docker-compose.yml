@@ -1,0 +1,39 @@
+version: '3'
+services:
+
+  sakila-db-fly:
+    container_name: sakila-db-fly
+    image: mysql:5.7.23
+    privileged: "true"
+    restart: always
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_DATABASE: "sakila"
+      MYSQL_USER: "test"
+      MYSQL_PASSWORD: "test"
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    volumes:
+    - /Users/zawadzkibartek/mysql/datadir-fly:/var/lib/mysql
+    networks:
+      internal:
+        aliases:
+        - sakila-db-fly
+
+  sakila-app:
+    container_name: sakila-app
+    privileged: "true"
+    depends_on:
+    - sakila-db-fly
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    ports:
+    - 8811:8811
+    networks:
+    - internal
+
+networks:
+  internal:

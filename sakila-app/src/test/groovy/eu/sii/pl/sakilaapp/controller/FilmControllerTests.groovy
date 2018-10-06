@@ -5,17 +5,14 @@ import eu.sii.pl.sakilaapp.controller.response.FilmCreateResponse
 import eu.sii.pl.sakilaapp.controller.response.FilmResponse
 import org.assertj.core.api.Assertions
 import org.junit.ClassRule
-import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
-import org.springframework.test.context.junit4.SpringRunner
 import org.testcontainers.containers.DockerComposeContainer
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
 
-@RunWith(SpringRunner)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 class FilmControllerTests extends Specification {
