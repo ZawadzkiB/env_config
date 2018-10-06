@@ -15,9 +15,9 @@ services:
       - 22:22
       - 2224:2224
     volumes:
-      - /Users/zawadzkibartek/gitlab/config:/etc/gitlab
-      - /Users/zawadzkibartek/gitlab/logs:/var/log/gitlab
-      - /Users/zawadzkibartek/gitlab/data:/var/opt/gitlab
+      - ~/gitlab/config:/etc/gitlab
+      - ~/gitlab/logs:/var/log/gitlab
+      - ~/gitlab/data:/var/opt/gitlab
     networks:
       internal:
         aliases:
@@ -30,7 +30,7 @@ services:
       - 8080:8080
       - 50000:50000
     volumes:
-      - /Users/zawadzkibartek/jenkins:/var/jenkins_home
+      - ~/jenkins:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       internal:
@@ -50,7 +50,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - ./sakila-db:/docker-entrypoint-initdb.d
-      - /Users/zawadzkibartek/mysql/datadir:/var/lib/mysql
+      - ~/mysql/datadir:/var/lib/mysql
     networks:
       internal:
         aliases:

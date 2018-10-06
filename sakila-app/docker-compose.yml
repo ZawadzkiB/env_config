@@ -15,7 +15,7 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
-    - /Users/zawadzkibartek/mysql/datadir-fly:/var/lib/mysql
+    - ~/mysql/datadir-fly:/var/lib/mysql
     networks:
       internal:
         aliases:
