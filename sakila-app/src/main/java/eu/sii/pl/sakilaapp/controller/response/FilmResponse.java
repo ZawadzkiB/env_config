@@ -23,7 +23,7 @@ public class FilmResponse {
   private Short id;
   private String title;
   private LocalDateTime lastUpdate;
-  private EnumSet<Features> specialFetures;
+  private EnumSet<Features> specialFeatures;
   private Rating rating;
   private BigDecimal replacementCost;
   private BigDecimal rentalRate;
@@ -48,7 +48,7 @@ public class FilmResponse {
     this.length = film.getLength();
     this.replacementCost = film.getReplacementCost();
     this.rating = film.getRating();
-    this.specialFetures = film.getSpecialFeatures();
+    this.specialFeatures = film.getSpecialFeatures();
     this.lastUpdate = film.getLastUpdate();
   }
 

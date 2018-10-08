@@ -1,7 +1,7 @@
 package eu.sii.pl.sakilaapp.entity;
 
-import eu.sii.pl.sakilaapp.converter.FeaturesConverter;
-import eu.sii.pl.sakilaapp.converter.RatingConverter;
+import eu.sii.pl.sakilaapp.entity.converter.FeaturesConverter;
+import eu.sii.pl.sakilaapp.entity.converter.RatingConverter;
 import eu.sii.pl.sakilaapp.enums.Features;
 import eu.sii.pl.sakilaapp.enums.Rating;
 import lombok.*;

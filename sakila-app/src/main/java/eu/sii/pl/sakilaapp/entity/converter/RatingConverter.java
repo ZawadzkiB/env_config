@@ -1,4 +1,4 @@
-package eu.sii.pl.sakilaapp.converter;
+package eu.sii.pl.sakilaapp.entity.converter;
 
 import eu.sii.pl.sakilaapp.enums.Rating;
 
