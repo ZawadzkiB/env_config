@@ -4,10 +4,9 @@ services:
   sakila-db-fly:
     container_name: sakila-db-fly
     image: mysql:5.7.23
-    privileged: "true"
     restart: always
     ports:
-    - 3306:3306
+      - 3306:3306
     environment:
       MYSQL_DATABASE: "sakila"
       MYSQL_USER: "test"
@@ -15,11 +14,11 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
-    - ~/mysql/datadir-fly:/var/lib/mysql
+      - ~/mysql/datadir-fly:/var/lib/mysql
     networks:
       internal:
         aliases:
-        - sakila-db-fly
+          - sakila-db-fly
 
   sakila-app:
     container_name: sakila-app

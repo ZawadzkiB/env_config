@@ -20,6 +20,8 @@ TESTS
     build/reports/tests/test/index.html
     build/test-results/test
 
+image::images/Screenshot at Oct 06 10-06-54.png[]
+
 ## Run APP
 
 Run is done with docker-compose.yml
@@ -48,5 +50,34 @@ APP is running on:
 ## Swagger-UI
 
     http://localhost:8811/api/swagger-ui.html#/
+
+image::images/Screenshot at Oct 06 10-07-54.png[]
+
+
+## SOAP - Endpoints
+
+    http://localhost:8811/ws/films.wsdl
+
+
+download Wizdler - Chrome Plugin
+
+open WSDL
+
+image::images/Screenshot at Oct 09 01-14-10.png[]
+
+select GetFilm
+
+image::images/Screenshot at Oct 09 01-14-48.png[]
+
+and send request
+
+image::images/Screenshot at Oct 09 01-18-28.png[]
+
+
+
+
+
+
+
 
 
