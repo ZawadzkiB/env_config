@@ -1,18 +1,18 @@
 package eu.sii.pl.sakilaapp.soap.web.services;
 
-import eu.sii.pl.sakilaapp.controller.response.FilmResponse;
 import eu.sii.pl.sakilaapp.service.FilmService;
 import eu.sii.pl.sakilaapp.soap.convert.FilmDetailsConverter;
-import eu.sii.pl.sakilaapp.soap.film.FilmDetails;
 import eu.sii.pl.sakilaapp.soap.film.GetFilmDetailsResponse;
 import eu.sii.pl.sakilaapp.soap.film.GetFilmRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 @Endpoint
+@Transactional
 public class FilmDetailsEndpoint {
 
   private final FilmService filmService;

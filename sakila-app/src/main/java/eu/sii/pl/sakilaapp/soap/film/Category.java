@@ -11,21 +11,21 @@ package eu.sii.pl.sakilaapp.soap.film;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Java class for category complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="category">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="FilmDetails" type="{http://soap.sakilaapp.pl.sii.eu/film}FilmDetails"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}short"/>
+ *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,37 +35,54 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "filmDetails"
+@XmlType(name = "category", propOrder = {
+    "id",
+    "name"
 })
-@XmlRootElement(name = "GetFilmDetailsResponse")
-public class GetFilmDetailsResponse {
+public class Category {
 
-    @XmlElement(name = "FilmDetails", required = true)
-    protected FilmDetails filmDetails;
+    protected short id;
+    @XmlElement(required = true)
+    protected String name;
 
     /**
-     * Gets the value of the filmDetails property.
+     * Gets the value of the id property.
      * 
-     * @return
-     *     possible object is
-     *     {@link FilmDetails }
-     *     
      */
-    public FilmDetails getFilmDetails() {
-        return filmDetails;
+    public short getId() {
+        return id;
     }
 
     /**
-     * Sets the value of the filmDetails property.
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(short value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the name property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the value of the name property.
      * 
      * @param value
      *     allowed object is
-     *     {@link FilmDetails }
+     *     {@link String }
      *     
      */
-    public void setFilmDetails(FilmDetails value) {
-        this.filmDetails = value;
+    public void setName(String value) {
+        this.name = value;
     }
 
 }
