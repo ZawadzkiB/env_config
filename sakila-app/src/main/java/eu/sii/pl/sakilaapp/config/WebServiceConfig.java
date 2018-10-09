@@ -24,17 +24,17 @@ public class WebServiceConfig {
   }
 
   @Bean(name = "films")
-  public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema studentsSchema) {
+  public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema filmsSchema) {
     DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
     definition.setPortTypeName("FilmPort");
     definition.setTargetNamespace("http://soap.sakilaapp.pl.sii.eu/film");
-    definition.setLocationUri("/ws");
-    definition.setSchema(studentsSchema);
+    definition.setLocationUri("/ws/film");
+    definition.setSchema(filmsSchema);
     return definition;
   }
 
   @Bean
-  public XsdSchema studentsSchema() {
+  public XsdSchema filmsSchema() {
     return new SimpleXsdSchema(new ClassPathResource("schema/film-details.xsd"));
   }
 }

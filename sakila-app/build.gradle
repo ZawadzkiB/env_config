@@ -32,8 +32,6 @@ repositories {
     mavenCentral()
 }
 
-
-
 dependencies {
     compile("mysql:mysql-connector-java",
             "org.springframework.boot:spring-boot-devtools",
