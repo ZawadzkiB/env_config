@@ -1,16 +1,9 @@
 package eu.sii.pl.sakilaapp.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "language")
 public class Language {
 
@@ -22,4 +15,38 @@ public class Language {
   private String name;
   @Column(name = "last_update")
   private LocalDateTime lastUpdate;
+
+  public Language(){}
+
+  public Language(String name, LocalDateTime lastUpdate) {
+    this.name = name;
+    this.lastUpdate = lastUpdate;
+  }
+
+  public Byte getLanguageId() {
+    return languageId;
+  }
+
+  public Language setLanguageId(Byte languageId) {
+    this.languageId = languageId;
+    return this;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Language setName(String name) {
+    this.name = name;
+    return this;
+  }
+
+  public LocalDateTime getLastUpdate() {
+    return lastUpdate;
+  }
+
+  public Language setLastUpdate(LocalDateTime lastUpdate) {
+    this.lastUpdate = lastUpdate;
+    return this;
+  }
 }

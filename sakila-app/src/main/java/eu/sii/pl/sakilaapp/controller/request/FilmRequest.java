@@ -6,32 +6,33 @@ import eu.sii.pl.sakilaapp.entity.Film;
 import eu.sii.pl.sakilaapp.entity.Language;
 import eu.sii.pl.sakilaapp.enums.Features;
 import eu.sii.pl.sakilaapp.enums.Rating;
-import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 
-@Data
+
 public class FilmRequest {
 
-  private final List<Actor> actors;
-  private final List<Category> categories;
-  private final Short id;
-  private final String title;
-  private final LocalDateTime lastUpdate;
-  private final EnumSet<Features> specialFeatures;
-  private final Rating rating;
-  private final BigDecimal replacementCost;
-  private final BigDecimal rentalRate;
-  private final Short length;
-  private final Byte rentalDuration;
-  private final Language originalLanguageId;
-  private final Language languageId;
-  private final Short releaseYear;
-  private final String description;
+  private List<Actor> actors;
+  private List<Category> categories;
+  private Short id;
+  private String title;
+  private LocalDateTime lastUpdate;
+  private EnumSet<Features> specialFeatures;
+  private Rating rating;
+  private BigDecimal replacementCost;
+  private BigDecimal rentalRate;
+  private Short length;
+  private Byte rentalDuration;
+  private Language originalLanguageId;
+  private Language languageId;
+  private Short releaseYear;
+  private String description;
 
+  public FilmRequest(){
+  }
 
   public Film buildEntity(){
     Film film = new Film();

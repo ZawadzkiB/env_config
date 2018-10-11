@@ -13,7 +13,6 @@ buildscript {
 }
 
 plugins {
-    id 'io.franzbecker.gradle-lombok' version '1.8'
     id 'java'
 }
 
